@@ -1,6 +1,36 @@
 python -m venv venv
-source venv/bin/activate  # For Unix/macOS
-# OR
-# venv\Scripts\activate  # For Windows
+venv\Scripts\activate  # On Windows
+source venv/bin/activate  # On Unix/MacOS
 
-pip install -r requirements.txt  # If you have a requirements.txt file
+pip install --upgrade pip setuptools wheel
+
+pip install -r requirements.txt
+
+Excel Add-in Setup Instructions:
+
+1. Create and activate a virtual environment:
+   python -m venv venv
+   venv\Scripts\activate  # On Windows
+   source venv/bin/activate  # On Unix/MacOS
+
+2. Install setuptools first:
+   pip install --upgrade pip setuptools wheel
+
+3. Install required packages:
+   pip install -r requirements.txt
+
+4. Create the Excel add-in:
+   xlwings addin install
+
+5. Enable the add-in in Excel:
+   a. Open Excel
+   b. Go to File > Options > Add-ins
+   c. At the bottom, in Manage: select "Excel Add-ins" and click "Go..."
+   d. Check the box next to "xlwings" and click OK
+
+6. To run the add-in:
+   python excel_addin/ribbon_addin.py
+
+Note: Make sure to run Excel as administrator the first time you install the add-in.
+
+
